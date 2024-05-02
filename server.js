@@ -20,7 +20,7 @@ mongoose.connection.on("error", (err) => {
 });
 
 const productRouter = require("./routes/product.routes");
-// const userRouter = require("./routes/user.routes");
+const userRouter = require("./routes/user.routes");
 
 app.use("/api/product", productRouter);
-// app.use("/api/user", userRouter);
+app.use("/api/user", userRouter);
