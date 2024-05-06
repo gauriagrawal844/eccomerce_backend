@@ -40,7 +40,11 @@ exports.delete = async (req, res) => {
 
 exports.update = async (req, res) => {
     const condition = req.query;
-    const product = await Product.findOneAndUpdate(condition, req.body, {
+    let productData=req.body;
+    if(req.file){
+      productData.thumbnail=req.file.path;
+    }
+    const product = await Product.findOneAndUpdate(condition, productData, {
       new: true,
       runValidators: true,
     });

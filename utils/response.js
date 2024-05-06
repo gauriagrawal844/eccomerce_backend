@@ -7,7 +7,7 @@ exports.sendResponse = (res, statusCode, message, data) => {
   });
 };
 
-exports.sendInternalErrorReponse = (res, error) => {
+exports.sendInternalErrorResponse = (res, error) => {
   return res.status(INTERNAL_STATUS_CODE).json({
     message: ERROR_MSG,
     error: error.message,
